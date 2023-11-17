@@ -12,11 +12,20 @@ class Post extends Model
     use HasFactory;
 
     /**
+     * Attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title', 'content'
+    ];
+
+    /**
      * Post belongs to a single user.
      *
      * @return BelongsTo
      */
-    public function user(): BelongsTo
+    public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'author_id');
     }

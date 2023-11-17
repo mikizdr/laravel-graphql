@@ -10,6 +10,10 @@ class Comment extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'post_id', 'reply'
+    ];
+
     /**
      * Comment belongs to a single post.
      *
